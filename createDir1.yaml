@@ -1,0 +1,10 @@
+---
+- name: create /goat directory
+  hosts: all
+  tasks:
+    - name: create /goat directory
+      file:
+        path: /goat
+        owner: cliffgoat
+        group: cliffgoat
+        state: directory
