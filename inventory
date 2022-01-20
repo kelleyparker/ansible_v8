@@ -1,0 +1,9 @@
+#control
+ansible1
+ansible2
+cliffgoat5rh1
+#cliffgoat5rh2
+192.168.1.152 # should be cliffgoat5rh2.  need to figure out why i can ping the IP but not the hostname
+cliffgoat6rh1
+
+#cliffgoat6
