@@ -1,0 +1,8 @@
+---
+- name: create user kparker  and grant sudo rights
+  hosts: all
+  tasks:
+  - name: add kparker user and add to wheel group as secondary (groups)
+    user:
+      name: kparker
+      groups: wheel
