@@ -1,0 +1,14 @@
+---
+- name: add user MikeMisterson
+  hosts: all
+  tasks: 
+  - name: add the user MikeMisterson and set password to the "usual" password
+    user:
+      name: MikeMisterson
+      password: "$6$v.xLtM75wuxk.3gR$X4fCrASF8StnUoq7o5OcfKvs0.KUxD4N2CzdNKkgqaqKlQxIut/ngne0UCDiWZAFhAfkkQwZN8Q8w5NdEHHfy0"
+- name:
+  hosts: all
+  tasks:
+  - name: add /cliffgoatVideos
+    shell:
+      cmd: mkdir /cliffgoatVideos
