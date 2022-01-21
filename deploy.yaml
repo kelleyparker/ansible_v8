@@ -1,0 +1,43 @@
+---
+- name: deploy packages and start services from facts files
+  hosts: all
+  vars_files: vars/allvars.yaml
+  tasks:
+  - name: Installs vsfptd, mariadb-server, httpd, firewalld
+    yum:
+      name:
+        - "{{ ansible_facts['ansible_local']['custom']['packages']['smb_package'] }}"
+        - "{{ ansible_facts['ansible_local']['custom']['packages']['ftp_package'] }}"
+        - "{{ ansible_facts['ansible_local']['custom']['packages']['db_package'] }}"
+        - "{{ ansible_facts['ansible_local']['custom']['packages']['web_package'] }}"
+        - "{{ ansible_facts['ansible_local']['custom']['packages']['firewall_package'] }}"
+      state: latest
+  - name: Starting and enabling services
+    service:
+      name: "{{ ansible_facts['ansible_local']['custom2']['services']['smb_service'] }}"
+      state: started
+      enabled: yes
+    service:
+      name: "{{ ansible_facts['ansible_local']['custom2']['services']['ftp_service'] }}"
+      state: started
+      enabled: yes
+    service:
+      name: "{{ ansible_facts['ansible_local']['custom2']['services']['db_service'] }}"
+      state: started
+      enabled: yes
+    service:
+      name: "{{ ansible_facts['ansible_local']['custom2']['services']['web_service'] }}"
+      state: started
+      enabled: yes
+    service:
+      name: "{{ ansible_facts['ansible_local']['custom2']['services']['firewall_service'] }}"
+      state: started
+      enabled: yes
+  - name: open http in firewall
+    firewalld:
+      state: enabled
+      immediate: yes
+      service: http
+  - name: add index page
+    copy:
+      src: index.html    
