@@ -1,0 +1,17 @@
+---
+- name: variable check
+  hosts: all
+  vars:
+    x: 3
+    y: 5
+    z: 2
+  tasks:
+    - name: Display value of {{ x }}
+      command:
+        cmd:
+          echo {{ x }}
+          echo {{ y }}
+          echo {{ z }}
+    - name: debug msg
+      debug:
+        msg: "I just printed {{ x }}, {{ y }}, and {{ z }}.
