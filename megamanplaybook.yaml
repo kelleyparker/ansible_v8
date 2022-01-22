@@ -1,0 +1,8 @@
+---
+- name: facts test
+  hosts: localhost
+  tasks:
+  - name: list mega man information
+    shell:
+      touch / "{{ ansible_facts['ansible_local']['mmx']['heroes']['primary'] }}"
+~                                                                                
