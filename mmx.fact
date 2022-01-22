@@ -1,0 +1,17 @@
+[heroes]
+primary = Mega Man X
+secondary = Zero
+
+[villains]
+main_boss = Sigma
+secondary_boss = Vile
+
+[weapons]
+fromChillPenguin = Shotgun Ice
+fromSparkMandrill = Electric Spark
+fromArmoredArmadillo = Rolling Shield
+fromLaunchOctopus = Homing Torpedo
+fromBoomerKuwanger = Boomerang Cutter
+fromStingChameleon = Chameleon Sting
+fromStormEagle = Storm Tornado
+fromFlameMammoth = Flame Wave
