@@ -1,0 +1,14 @@
+---
+- name: list Mega Man X's friend
+  hosts: ansible1
+  vars:
+    thehero: Mega Man X
+    thefriend: zero
+  tasks:
+    - name: list the heroes
+      shell:
+        touch / "{{ thehero }}"
+        touch / "{{ thefriend }}"
+    - name: output debug messages
+      debug:
+        msg: "I just created folders named: /{{ thehero }} and /{{ thefriend }}"
